@@ -1,0 +1,33 @@
+---
+title: "Bayesian Statistics"
+author: "Stephen McMurray"
+date: "2023-06-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## BAYESIAN STATSTISTICS
+
+This is a guide to help me learn Bayesian statistics.
+
+the following equation is simply adding up the values for the binomial distribution for every value of k from 1 to n for a p of 0.00720
+
+```{r}
+pbinom(0,100,0.00720,lower.tail=FALSE)
+```
+
+## The Probability Density Function Plot
+
+You can also embed plots, for example:
+
+```{r}
+xs <- seq(0.005,0.01,by=0.00001)
+plot(xs,dbeta(xs,300,40000-300),type="l",lwd=3,
+     ylab="density",
+     xlab="probability of subscripton",
+     main="PDF Beta(300,39700)")
+```
+
