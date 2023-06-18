@@ -1,3 +1,5 @@
+setwd("~/GitHub/BAYES_R_MARKDOWN")
+
 pbinom(0,100,0.00720,lower.tail=FALSE)
 
 integrate (function(p) dbeta(p,14,27),0,0.5)
@@ -7,10 +9,12 @@ integrate (function(x) dbeta(x,5,1195),0.005,1)
 integrate(function(x) dnorm(x,mean=20.6,sd=1.62),10,18)
 
 xs <- seq(0.005,0.01,by=0.00001)
+png("PDF_plot.png") 
 plot(xs,dbeta(xs,300,40000-300),type="l",lwd=3,
      ylab="density",
      xlab="probability of subscripton",
      main="PDF Beta(300,39700)")
+dev.off()
 
 pbeta(0.0065,300,39700)
 
@@ -38,8 +42,9 @@ bayes.factor <- function (h_top,h_bottom) {
 }
 
 bfs <- bayes.factor(hypothesis,0.5)
+png("all_possible_hypotheses.png")
 plot(hypothesis,bfs,type="l")
-
+dev.off()
 max(bfs)
 hypothesis[which.max(bfs)]
 
