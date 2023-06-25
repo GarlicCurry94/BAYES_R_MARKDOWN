@@ -42,7 +42,7 @@ bayes.factor <- function (h_top,h_bottom) {
 }
 
 bfs <- bayes.factor(hypothesis,0.5)
-png("all_possible_hypotheses.png")
+png("all_possible_hypotheses_plot.png")
 plot(hypothesis,bfs,type="l")
 dev.off()
 max(bfs)
