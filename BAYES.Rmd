@@ -19,13 +19,12 @@ The following equation is simply adding up the values for the binomial distribut
 pbinom(0,100,0.00720,lower.tail=FALSE)
 ```
 
-This function takes 3 arguments, & uses integrate () to perform the integration automtically.
+This function takes 3 arguments, & uses integrate () to perform the integration automatically.
 Its calculating the probability that the chance of getting 2 coins from the box is <= 0.5 given the data
 
 ```{r}
 integrate (function(p) dbeta(p,14,27),0,0.5)
 ```
-
 
 ## The Probability Density Function Plot
 
@@ -38,6 +37,24 @@ plot(xs,dbeta(xs,300,40000-300),type="l",lwd=3,
      ylab="density",
      xlab="probability of subscripton",
      main="PDF Beta(300,39700)")
+```
+
+## Monte Carlo Simulation
+
+A Monte Carlo simulation is ant technique that makes use of random sampling to solve a problem.
+I randomly sampled from 2 distributions where each sample is chosen based on its probability in the distribution.
+so that samples in a high-probability region will appear more frequently.
+
+```{r}
+n.trials <- 100000
+prior.alpha <- 3
+prior.beta <- 7
+a.samples <- rbeta(n.trials,36+prior.alpha,114+prior.beta)
+b.samples <- rbeta(n.trials,50+prior.alpha,100+prior.beta)
+p.b_superior <- sum(b.samples > a.samples)/n.trials
+
+p.b_superior  
+
 ```
 
 ## Searching for More Hypotheses
