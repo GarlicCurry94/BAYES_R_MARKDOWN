@@ -50,7 +50,6 @@ hypothesis[which.max(bfs)]
 
 priors <- ifelse(hypothesis >=0.2 & hypothesis <=0.3, 1/1000,1)
 plot(hypothesis,priors,type="l")
-
 posteriors <-priors*bfs
 plot(hypothesis,posteriors,type="l")
 
