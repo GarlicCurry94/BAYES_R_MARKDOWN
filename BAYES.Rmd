@@ -85,3 +85,19 @@ posteriors <-priors*bfs
 plot(hypothesis,posteriors,type="l")
 ```
 
+## Building a Probabilty Distribution
+
+A true probability distribution has sum of all possible beliefs = 1  
+If not =1 we need normalize our posterior odds so they do =1.
+To do so divide each value in our posterior vector by sum of all values
+
+```{r}
+sum(posteriors)
+p.posteriors <- posteriors/sum(posteriors)
+sum(p.posteriors)
+plot(hypothesis,p.posteriors,type="l")
+sum(p.posteriors[which(hypothesis < 0.5)])
+sum(p.posteriors*hypothesis)
+hypothesis[which.max(p.posteriors)]
+```
+

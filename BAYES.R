@@ -49,15 +49,20 @@ max(bfs)
 hypothesis[which.max(bfs)]
 
 priors <- ifelse(hypothesis >=0.2 & hypothesis <=0.3, 1/1000,1)
+png("hypothesis_priors_plot.png")
 plot(hypothesis,priors,type="l")
+dev.off()
 posteriors <-priors*bfs
+png("hypothesis_posteriors_plot.png")
 plot(hypothesis,posteriors,type="l")
+dev.off()
 
 sum(posteriors)
 p.posteriors <- posteriors/sum(posteriors)
 sum(p.posteriors)
+png("hypothesis_posteriors_probability_plot.png")
 plot(hypothesis,p.posteriors,type="l")
-
+dev.off()
 sum(p.posteriors[which(hypothesis < 0.5)])
 sum(p.posteriors*hypothesis)
 hypothesis[which.max(p.posteriors)]
