@@ -13,6 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This is a guide to help me learn Bayesian statistics.  
 
+To compute the binomial coefficient for the case of flipping 2 heads in 3 tosses
+
+```{r}
+choose(3,2)
+```
+
+
 The following equation is simply adding up the values for the binomial distribution for every value of k from 1 to n for a p of 0.00720
 
 ```{r}

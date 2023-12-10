@@ -366,6 +366,10 @@ pre code {
 <div id="bayesian-statstistics" class="section level2">
 <h2>BAYESIAN STATSTISTICS</h2>
 <p>This is a guide to help me learn Bayesian statistics.</p>
+<p>To compute the binomial coefficient for the case of flipping 2 heads
+in 3 tosses</p>
+<pre class="r"><code>choose(3,2)</code></pre>
+<pre><code>## [1] 3</code></pre>
 <p>The following equation is simply adding up the values for the
 binomial distribution for every value of k from 1 to n for a p of
 0.00720</p>
@@ -406,7 +410,7 @@ b.samples &lt;- rbeta(n.trials,50+prior.alpha,100+prior.beta)
 p.b_superior &lt;- sum(b.samples &gt; a.samples)/n.trials
 
 p.b_superior  </code></pre>
-<pre><code>## [1] 0.95821</code></pre>
+<pre><code>## [1] 0.95916</code></pre>
 </div>
 <div id="searching-for-more-hypotheses" class="section level2">
 <h2>Searching for More Hypotheses</h2>
